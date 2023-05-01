@@ -1,0 +1,18 @@
+{% extends 'padre.html' %}
+{% include static %}
+
+{% block contenidoQueCambia %}
+    <center>
+
+        <h1 style="color:green;">{{user.username}} puedes modificar tus datos en la siguiente tabla</h1>
+        <form action="{% url 'Profile' %}" method="POST">{% csrf_token %}
+            <table>
+                {{miFormulario.as_p}}
+            </table>
+            <button class="btn btn-primary text-uppercase" type="submit">Actualizar</button>
+    
+        </form>
+        
+    </center>
+
+{% endblock contenidoQueCambia %}

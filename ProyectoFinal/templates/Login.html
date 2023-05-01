@@ -1,0 +1,24 @@
+{% extends 'padre.html' %}
+{% include static %}
+
+{% block contenidoQueCambia %}
+      <center>
+        <h1 style="color:blue;">Inicia sesion!</h1>
+        <h1 style= "color:red;">{{mensaje}}</h1>
+        <form action="{% url 'Login' %}" method="POST">
+            {% csrf_token %}
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Username</label>
+                  <input type="text" class="form-control" name="username" aria-describedby="emailHelp" style="width : 200px; heigth : 10px">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" name="password"style="width : 200px; heigth : 10px">
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar sesion</button>
+        </form>
+      </center>
+        
+
+
+{% endblock contenidoQueCambia %}

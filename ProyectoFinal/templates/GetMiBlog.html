@@ -1,0 +1,23 @@
+{% extends 'padre.html' %}
+{% include static %}
+
+{% block contenidoQueCambia %}
+    
+    
+    {% if user.is_authenticated %}
+        
+        {% if url %}
+            
+            <center>
+                <h1>{{titulo}}</h1>
+                <img  width="640" height="440" src="{{url}}" alt = "Blogs"/>
+                <br>
+                <br>
+                <p><h4>{{texto}}</h4></p>
+            </center>   
+        {% endif %}
+               
+    {% endif %}
+        
+
+{% endblock contenidoQueCambia %}

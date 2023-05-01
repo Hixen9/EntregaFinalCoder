@@ -2,11 +2,11 @@ from django.db import models
 
 # Create your models here.
 class Usuarios(models.Model):
-    IdUsuario = models.IntegerField()
+    email = models.EmailField()
     nombre = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
-    contraseña = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50)
+    telefono = models.CharField(max_length=20)
+ 
 
-class Admin(models.Model):
-    nombre = models.CharField( max_length=50)
-    contraseña = models.CharField( max_length=50)
+
+

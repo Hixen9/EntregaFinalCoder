@@ -1,0 +1,16 @@
+{% extends 'padre.html' %}
+{% include static %}
+
+{% block contenidoQueCambia %}
+    
+    <center>
+    <h1 style="color:blue;">Edita tu Blog</h1>
+    <h1 style= "color:red;">{{mensaje}}</h1>
+    <form action= "#!"method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        {{miFormulario.as_p}}
+        <button type="submit" class="btn btn-primary" value="Actualizar">Actualizar</button>
+    </form>
+    </center>
+
+{% endblock contenidoQueCambia %}

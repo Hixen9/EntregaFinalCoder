@@ -17,9 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from AppRegistro.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
-    path('admini/', admin.site.urls),
-    path('app-Registro/', include('AppRegistro.urls')),
+    path('admin/', admin.site.urls),
+    path('registro/', include('AppRegistro.urls')),
+    path('iniciosesion/', include('AppPerfiles.urls')),
+    path('iniciosesion/', include('django.contrib.auth.urls')),
     path('',Home,name='home'),
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+urlpatterns+= static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
